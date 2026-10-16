@@ -1,4 +1,4 @@
-# github-actions versioning reports major updates as non-breaking
+# 47102: github-actions versioning reports major updates as non-breaking
 
 ## Current behavior
 
@@ -20,4 +20,4 @@ The major update is breaking, so the rule matches and the pull request has the `
 
 ## Link to the Renovate issue or Discussion
 
-The fix is proposed in a pull request; this section will link to it.
+The fix is proposed in [renovatebot/renovate#47102](https://github.com/renovatebot/renovate/pull/47102).
