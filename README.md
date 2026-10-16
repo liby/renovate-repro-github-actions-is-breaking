@@ -2,7 +2,15 @@
 
 ## Current behavior
 
-Renovate proposes a major update of `actions/checkout` from `v3`, but the `matchIsBreaking: true` rule in `renovate.json` does not match it, so the pull request has no `breaking` label.
+Renovate proposes a major update of `actions/checkout` from `v3`, but reports it as non-breaking, so the `matchIsBreaking: true` rule in `renovate.json` does not match it and a pull request for it would get no `breaking` label. A lookup with Renovate 44.155.2 (`LOG_LEVEL=debug renovate --platform=local --dry-run=lookup`) logs:
+
+```
+"depName": "actions/checkout"
+"currentValue": "v3"
+"newVersion": "v7.0.1"
+"updateType": "major"
+"isBreaking": false
+```
 
 The `github-actions` versioning declares `isBreaking(version, current)` while Renovate calls it with `(currentVersion, newVersion)`, so it compares every upgrade in reverse and reports it as non-breaking.
 
